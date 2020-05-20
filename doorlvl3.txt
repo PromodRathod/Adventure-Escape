@@ -1,0 +1,40 @@
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+
+public class gamecontroller : MonoBehaviour {
+	private int num;
+	private int countGuess;
+
+	[SerializeField]
+	private Text text;
+
+	void Awake() {
+		num = Random.Range(0,100);
+		text.text = "Guess a number between 0 and 100";
+	}
+
+	public void GetInout[String guess] {
+		CompareGuesses (int.Parse(guess));
+		input.text = "";
+	}
+
+	void CompareGuesses (int guess) {
+		if (guess == num) {
+			text.text = "You Guessed correctly, the number was " = guess;
+		}
+		else if (guess < num) { 
+			text.text = "The Guess Number is less than the Number You are typing to Guess";			
+		else if (guess > num) { 
+			text.text = "The Guess Number is greater than the Number You are typing to Guess";
+		}
+	}
+}
+
+
+
+************************************************************************************************************************************
+
+
+
+

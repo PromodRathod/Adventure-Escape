@@ -1,0 +1,183 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class guessController2 : MonoBehaviour
+{
+    public GameObject panel2;
+    public GameObject text2;
+    public GameObject input2;
+
+    void Awake() {                              // is used to initialize any variables or game state before the game starts
+		text2.GetComponent<Text>().text = "What five-letter word becomes shorter when you add two letters to it?";
+	}
+
+    public void GetInput (string guess) {
+            CompareGuesses (guess);
+            input2.GetComponent<InputField>().text="";
+    }
+
+    void CompareGuesses (string guess) {           //inbuilt function to compare the guesses
+        string ans = "short";
+		if (string.Equals(guess,ans)) {
+			text2.GetComponent<Text>().text = "You Guessed correctly! the answer was " + guess;
+            StartCoroutine("WaitForSec");
+		}
+		else { 
+			text2.GetComponent<Text>().text = "Wrong Guess";
+		}
+	}
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        text2.SetActive(false);
+        input2.SetActive(false);
+        panel2.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.tag == "Player") {
+            text2.SetActive(true);
+            input2.SetActive(true);
+            panel2.SetActive(true);
+        }
+    }
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(panel2);
+        Destroy(gameObject);
+        Destroy(text2);
+        Destroy(input2);
+    }
+}
+
+
+*******************************************************************************
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class guessController1 : MonoBehaviour
+{
+    public GameObject panel1;
+    public GameObject text1;
+    public GameObject input1;
+
+    void Awake() {                              // is used to initialize any variables or game state before the game starts
+		text1.GetComponent<Text>().text = "What goes around the world but still stays in the corner?";
+	}
+
+    public void GetInput (string guess) {
+            CompareGuesses (guess);
+            input1.GetComponent<InputField>().text="";
+    }
+
+    void CompareGuesses (string guess) {           //inbuilt function to compare the guesses
+        string ans = "stamp";
+		if (string.Equals(guess,ans)) {
+			text1.GetComponent<Text>().text = "You Guessed correctly! the answer was " + guess;
+            StartCoroutine("WaitForSec");
+		}
+		else { 
+			text1.GetComponent<Text>().text = "Wrong Guess";
+		}
+	}
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        text1.SetActive(false);
+        input1.SetActive(false);
+        panel1.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.tag == "Player") {
+            text1.SetActive(true);
+            input1.SetActive(true);
+            panel1.SetActive(true);
+        }
+    }
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(panel1);
+        Destroy(gameObject);
+        Destroy(text1);
+        Destroy(input1);
+    }
+}
+
+*******************************************************************
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class guessController : MonoBehaviour
+{
+    public GameObject panel;
+    public GameObject text;
+    public GameObject input;
+    private int number;
+
+    void Awake() {                              // is used to initialize any variables or game state before the game starts
+		number = Random.Range(0,100);
+		text.GetComponent<Text>().text = "Guess a number between 0 and 100";
+	}
+
+    public void GetInput (string guess) {
+            CompareGuesses (int.Parse(guess));
+            input.GetComponent<InputField>().text="";
+    }
+
+    void CompareGuesses (int guess) {           //inbuilt function to compare the guesses
+		if (guess == number) {
+			text.GetComponent<Text>().text = "You Guessed correctly! the number was " + guess;
+            StartCoroutine("WaitForSec");
+		}
+		else if (guess < number) { 
+			text.GetComponent<Text>().text = "The Guess Number is less than the Number You are typing to Guess";	
+        }		
+		else if (guess > number) { 
+			text.GetComponent<Text>().text = "The Guess Number is greater than the Number You are typing to Guess";
+		}
+	}
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        text.SetActive(false);
+        input.SetActive(false);
+        panel.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider player)
+    {
+        if (player.gameObject.tag == "Player") {
+            text.SetActive(true);
+            input.SetActive(true);
+            panel.SetActive(true);
+        }
+    }
+
+    IEnumerator WaitForSec()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(panel);
+        Destroy(gameObject);
+        Destroy(text);
+        Destroy(input);
+    }
+}
