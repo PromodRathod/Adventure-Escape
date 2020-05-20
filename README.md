@@ -1,6 +1,7 @@
 # Adventure-Escape
 A game developed using the Unity Engine. This game consists of three levels each of different difficulty and each level is different from each other.
-
+![Screenshot (65)](https://user-images.githubusercontent.com/46192924/82460387-b810a980-9ad6-11ea-82f8-f98bcce89e60.png)
+![Screenshot (60)](https://user-images.githubusercontent.com/46192924/82460457-cc54a680-9ad6-11ea-9eb0-aef1faf24cf1.png)
 Adventure Escape is a game made in Unity3D which involves three levels of varying complexity that the character has to clear in order to win. This is a very interesting game that can be played by someone who loves the thrill of finding clues and escaping with the help of them.
 
 The game makes use of first-person view. The player has to escape each level using different procedures which he/she will have to figure out by observing his/her environment. He/She will have to interact with various objects and surroundings throughout the game. For the purpose of interaction, the player can use either mouse or keyboard. Different keys like arrow keys are used to move around. For the player to move faster, shift can be used along with arrow keys. “E” is used to open the doors. Left mouse click when pressed allows the
